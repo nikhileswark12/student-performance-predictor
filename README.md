@@ -31,7 +31,7 @@ Educational outcomes are influenced by a variety of background factors, includin
 
 ## System Architecture
 
-The system consists of a single interactive Jupyter Notebook that loads a local CSV file, processes the data in memory, trains three different regression models for four distinct targets, and outputs performance metrics and visualizations inline. No data is stored externally, and models are not persisted to disk.
+The system consists of a single interactive Jupyter Notebook that loads a local CSV file, processes the data in memory, trains three different regression models for four distinct targets, and outputs performance metrics and visualizations inline. The best-performing model for each target is then saved to disk for potential reuse.
 
 ## ML Pipeline
 
@@ -45,6 +45,7 @@ The system consists of a single interactive Jupyter Notebook that loads a local 
 8. **Evaluate and Compare**: Evaluate models using 5-fold cross-validation and report mean R² and standard deviation.
 9. **Feature Importance**: Extract and plot the most influential features from the Random Forest model.
 10. **Best Model Selection**: Identify the highest-performing model based on R² for each target variable.
+11. **Save Best Models**: Save the best-performing model for each target to disk as a `.joblib` file for potential reuse.
 
 ## Model Performance
 
@@ -108,6 +109,11 @@ The system consists of a single interactive Jupyter Notebook that loads a local 
 
 ```text
 student-performance-predictor/
+├── models/
+│   ├── average_score_model.joblib
+│   ├── math_score_model.joblib
+│   ├── reading_score_model.joblib
+│   └── writing_score_model.joblib
 ├── README.md
 ├── requirements.txt
 ├── StudentPerformance.ipynb
@@ -139,7 +145,6 @@ Open `StudentPerformance.ipynb` and run all cells from top to bottom.
 
 ## Current Status
 
-- **Completed**: End-to-end data processing, EDA, modeling, 5-fold cross-validation evaluation, and tree depth-capping.
+- **Completed**: End-to-end data processing, EDA, modeling, 5-fold cross-validation evaluation, tree depth-capping, and model persistence.
 - **Planned Enhancements**:
-  - Model Persistence
   - Hyperparameter Tuning
