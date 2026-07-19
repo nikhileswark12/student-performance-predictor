@@ -147,4 +147,7 @@ Open `StudentPerformance.ipynb` and run all cells from top to bottom.
 
 - **Completed**: End-to-end data processing, EDA, modeling, 5-fold cross-validation evaluation, tree depth-capping, and model persistence.
 - **Planned Enhancements**:
-  - Hyperparameter Tuning
+   - Hyperparameter Tuning
+   - Additional Model Types (e.g. Gradient Boosting)
+   - Prediction Interface for New Inputs
+   - Deployment as a Simple Web Application
